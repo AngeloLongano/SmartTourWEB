@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Presentation",
+    "namedRoute": "SmartTourPresentation",
+    "icon": "slideshow"
+  },
+  {
+    "label": "Mappe",
+    "namedRoute": "SmartTourMaps",
+    "icon": "map"
+  },
+  {
+    "label": "Contenuti",
+    "namedRoute": "SmartTourContentList",
+    "icon": "amp_stories"
+  },
+  {
+    "label": "Beacons",
+    "namedRoute": "SmartTourBeaconList",
+    "icon": "wifi_tethering"
+  },
+  {
+    "label": "Settings",
+    "namedRoute": "SmartTourSettings",
+    "icon": "settings"
+  },
+  {
+    "label": "SmartTourList",
+    "namedRoute": "SmartTourList",
+    "icon": "keyboard_return"
+  }
+]

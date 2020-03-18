@@ -7,6 +7,14 @@ import "@quasar/extras/material-icons/material-icons.css";
 import {
   Quasar,
   QAvatar,
+  QScrollArea,
+  QCard,
+  QCardSection,
+  QCardActions,
+  QInput,
+  QForm,
+  Ripple,
+  Notify,
   QLayout,
   QHeader,
   QDrawer,
@@ -23,9 +31,17 @@ import {
 } from "quasar";
 
 Vue.use(Quasar, {
-  config: {},
+  config: {
+    ripple: {}
+  },
   components: {
     QAvatar,
+    QScrollArea,
+    QCard,
+    QCardSection,
+    QCardActions,
+    QInput,
+    QForm,
     QLayout,
     QHeader,
     QDrawer,
@@ -41,5 +57,8 @@ Vue.use(Quasar, {
     QItemLabel
   },
   directives: {},
-  plugins: {}
+  plugins: {
+    Notify,
+    Ripple
+  }
 });

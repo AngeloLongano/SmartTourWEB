@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Smart Tours",
+    "namedRoute": "SmartTourList",
+    "icon": "explore"
+  },
+  {
+    "label": "MyAgency",
+    "namedRoute": "MyAgency",
+    "icon": "slideshow"
+  },
+  {
+    "label": "Settings",
+    "namedRoute": "MainSettings",
+    "icon": "settings"
+  }
+]

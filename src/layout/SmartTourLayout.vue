@@ -8,7 +8,7 @@
             <q-avatar>
               <q-icon name="explore" />
             </q-avatar>
-            Smart tour
+            SMART TOUR # {{ id }} EDITOR
           </q-toolbar-title>
         </q-toolbar>
       </q-header>
@@ -28,7 +28,7 @@
         <q-scroll-area class="fit">
           <q-list padding>
             <q-item
-              v-for="item in MainMenuItems"
+              v-for="item in SmartTourMenuItems"
               :key="item"
               clickable
               v-ripple
@@ -54,13 +54,14 @@
 </template>
 
 <script>
-import MainMenuItems from "../assets/menus/MainMenuItems.json";
+import SmartTourMenuItems from "../assets/menus/SmartTourMenuItems.json";
 export default {
+  props: ["id"],
   data() {
     return {
       drawer: false,
       miniState: true,
-      MainMenuItems: MainMenuItems
+      SmartTourMenuItems: SmartTourMenuItems
     };
   }
 };
