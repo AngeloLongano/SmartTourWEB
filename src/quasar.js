@@ -16,6 +16,11 @@ import {
   Ripple,
   Notify,
   QLayout,
+  QTabPanel,
+  QTabPanels,
+  QTabs,
+  QTab,
+  QSeparator,
   QHeader,
   QDrawer,
   QPageContainer,
@@ -43,6 +48,11 @@ Vue.use(Quasar, {
     QInput,
     QForm,
     QLayout,
+    QTabPanel,
+    QTabPanels,
+    QTabs,
+    QTab,
+    QSeparator,
     QHeader,
     QDrawer,
     QPageContainer,
@@ -56,7 +66,9 @@ Vue.use(Quasar, {
     QItemSection,
     QItemLabel
   },
-  directives: {},
+  directives: {
+    Ripple
+  },
   plugins: {
     Notify,
     Ripple

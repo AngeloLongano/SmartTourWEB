@@ -1,9 +1,14 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import * as layoutState from "@/store/modules/layoutState";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  modules: {
+    layoutState
+  },
   state: {
     smartTours: [
       {
@@ -55,6 +60,5 @@ export default new Vuex.Store({
     ]
   },
   mutations: {},
-  actions: {},
-  modules: {}
+  actions: {}
 });

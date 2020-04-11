@@ -2,7 +2,7 @@
   <q-layout>
     <q-page-container>
       <q-page padding>
-        <slot></slot>
+        <router-view />
       </q-page>
     </q-page-container>
   </q-layout>

@@ -29,7 +29,7 @@
           <q-list padding>
             <q-item
               v-for="item in SmartTourMenuItems"
-              :key="item"
+              :key="item.label"
               clickable
               v-ripple
               :to="{ name: item.namedRoute }"

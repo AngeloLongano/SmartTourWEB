@@ -1,13 +1,14 @@
 <template>
-  <PublicLayout>
+  <div>
     <div>
       <h1>SIAMO TRE RAGAZZI CHE FANNO UN PROJECT WORK, e non una tesina...</h1>
     </div>
-  </PublicLayout>
+  </div>
 </template>
 <script>
-import PublicLayout from "@/layout/PublicLayout.vue";
 export default {
-  PublicLayout
+  beforeCreate() {
+    this.$store.dispatch("layoutState/updateType", "public");
+  }
 };
 </script>

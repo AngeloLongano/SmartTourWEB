@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>My SmartTours</h1>
-    <q-list bordered v-for="item in smartTours" :key="item">
+    <q-list bordered v-for="item in smartTours" :key="item.id">
       <q-item
         clickable
         v-ripple
@@ -20,6 +20,9 @@
 <script>
 import { mapState } from "vuex";
 export default {
+  beforeCreate() {
+    this.$store.dispatch("layoutState/updateType", "default");
+  },
   computed: {
     ...mapState(["smartTours"])
   }

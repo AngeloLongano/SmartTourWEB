@@ -1,18 +1,23 @@
 <template>
-  <PublicLayout>
+  <div>
     <div class="q-pa-md row items-start q-gutter-md">
       <LoginItem />
     </div>
-  </PublicLayout>
+  </div>
 </template>
 
 <script>
-import PublicLayout from "@/layout/PublicLayout.vue";
+import { mapState } from "vuex";
 import LoginItem from "@/components/LoginItem.vue";
 export default {
+  beforeCreate() {
+    this.$store.dispatch("layoutState/updateType", "public");
+  },
   components: {
-    PublicLayout,
     LoginItem
+  },
+  computed: {
+    ...mapState(["layoutState"])
   }
 };
 </script>

@@ -1,23 +1,33 @@
 [
   {
+    "label": "Home",
+    "namedRoute": "SmartTourHome",
+    "icon": "home"
+  },
+  {
     "label": "Presentation",
     "namedRoute": "SmartTourPresentation",
     "icon": "slideshow"
   },
   {
-    "label": "Mappe",
-    "namedRoute": "SmartTourMaps",
+    "label": "Mappa",
+    "namedRoute": "SmartTourMap",
     "icon": "map"
   },
   {
-    "label": "Contenuti",
-    "namedRoute": "SmartTourContentList",
-    "icon": "amp_stories"
+    "label": "Tours",
+    "namedRoute": "SmartTourListTour",
+    "icon": "explore"
   },
   {
-    "label": "Beacons",
-    "namedRoute": "SmartTourBeaconList",
-    "icon": "wifi_tethering"
+    "label": "Quiz",
+    "namedRoute": "SmartTourQuiz",
+    "icon": "assignment"
+  },
+  {
+    "label": "Ask",
+    "namedRoute": "SmartTourAsk",
+    "icon": "forum"
   },
   {
     "label": "Settings",

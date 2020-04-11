@@ -1,5 +1,7 @@
 <template>
   <div>
-    <h1>This is maps page</h1>
+    <p>
+      I'm the quiz tab
+    </p>
   </div>
 </template>

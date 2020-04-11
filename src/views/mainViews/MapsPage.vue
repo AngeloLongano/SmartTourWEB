@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is main settings page</h1>
+    <h1>This is my maps page</h1>
   </div>
 </template>
 <script>

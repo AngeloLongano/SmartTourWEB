@@ -1,13 +1,33 @@
 [
   {
+    "label": "My Agency",
+    "namedRoute": "Agency",
+    "icon": "home"
+  },
+  {
     "label": "Smart Tours",
     "namedRoute": "SmartTourList",
     "icon": "explore"
   },
   {
-    "label": "MyAgency",
-    "namedRoute": "MyAgency",
-    "icon": "slideshow"
+    "label": "Le mie mappe",
+    "namedRoute": "Maps",
+    "icon": "map"
+  },
+  {
+    "label": "Contenuti smart",
+    "namedRoute": "SmartThings",
+    "icon": "dynamic_feed"
+  },
+  {
+    "label": "I miei media",
+    "namedRoute": "Media",
+    "icon": "cloud"
+  },
+  {
+    "label": "Community",
+    "namedRoute": "Community",
+    "icon": "comment"
   },
   {
     "label": "Settings",

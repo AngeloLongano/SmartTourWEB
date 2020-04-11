@@ -4,18 +4,24 @@ import VueRouter from "vue-router";
 import LoginPage from "../views/LoginPage.vue";
 import AboutUsPage from "../views/AboutUsPage.vue";
 
-import DefaultLayout from "../layout/DefaultLayout.vue";
-import SmartTourLayout from "../layout/SmartTourLayout.vue";
+// import DefaultLayout from "../layout/DefaultLayout.vue";
+// import SmartTourLayout from "../layout/SmartTourLayout.vue";
 
 import SmartTourListPage from "../views/mainViews/SmartTourListPage.vue";
-import MyAgencyPage from "../views/mainViews/MyAgencyPage.vue";
+import AgencyPage from "../views/mainViews/AgencyPage.vue";
+import MapsPage from "../views/mainViews/MapsPage.vue";
+import MediaPage from "../views/mainViews/MediaPage.vue";
+import SmartThingsPage from "../views/mainViews/SmartThingsPage.vue";
+import CommunityPage from "../views/mainViews/CommunityPage.vue";
 import MainSettingsPage from "../views/mainViews/MainSettingsPage.vue";
 
-import SmartTourBeaconListPage from "../views/smartTourViews/SmartTourBeaconListPage.vue";
-import SmartTourContentListPage from "../views/smartTourViews/SmartTourContentListPage.vue";
-import SmartTourMapsPage from "../views/smartTourViews/SmartTourMapsPage.vue";
-import SmartTourPresentationPage from "../views/smartTourViews/SmartTourPresentationPage.vue";
-import SmartTourSettingsPage from "../views/smartTourViews/SmartTourSettingsPage.vue";
+import STHomePage from "../views/smartTourViews/STHomePage.vue";
+import STListTourPage from "../views/smartTourViews/STListTourPage.vue";
+import STQuizPage from "../views/smartTourViews/STQuizPage.vue";
+import STAskPage from "../views/smartTourViews/STAskPage.vue";
+import STMapPage from "../views/smartTourViews/STMapPage.vue";
+import STPresentationPage from "../views/smartTourViews/STPresentationPage.vue";
+import STSettingsPage from "../views/smartTourViews/STSettingsPage.vue";
 
 Vue.use(VueRouter);
 
@@ -31,65 +37,85 @@ const routes = [
     name: "AboutUS",
     component: AboutUsPage
   },
-  {
-    path: "/",
-    component: DefaultLayout,
-    children: [
-      {
-        path: "/smartTourList",
-        name: "SmartTourList",
 
-        component: SmartTourListPage
-      },
-      {
-        path: "/myAgency",
-        name: "MyAgency",
-        component: MyAgencyPage
-      },
-      {
-        path: "/settings",
-        name: "MainSettings",
-        component: MainSettingsPage
-      }
-    ]
+  {
+    path: "/smartTourList",
+    name: "SmartTourList",
+    component: SmartTourListPage
   },
   {
-    path: "/smartTour/:id",
-    component: SmartTourLayout,
+    path: "/agency",
+    name: "Agency",
+    component: AgencyPage
+  },
+  {
+    path: "/maps",
+    name: "Maps",
+    component: MapsPage
+  },
+  {
+    path: "/smartThings",
+    name: "SmartThings",
+    component: SmartThingsPage
+  },
+  {
+    path: "/media",
+    name: "Media",
+    component: MediaPage
+  },
+  {
+    path: "/community",
+    name: "Community",
+    component: CommunityPage
+  },
+  {
+    path: "/settings",
+    name: "MainSettings",
+    component: MainSettingsPage
+  },
+  //smart tour section
+  {
+    path: "/smartTour/:id/home",
+    name: "SmartTourHome",
+    alias: "/smartTour/:id",
     props: true,
-    children: [
-      {
-        path: "/smartTour/:id/presentation",
-        name: "SmartTourPresentation",
-        alias: "/smartTour/:id",
-        props: true,
-        component: SmartTourPresentationPage
-      },
-      {
-        path: "/smartTour/:id/maps",
-        name: "SmartTourMaps",
-        props: true,
-        component: SmartTourMapsPage
-      },
-      {
-        path: "/smartTour/:id/contents",
-        name: "SmartTourContentList",
-        props: true,
-        component: SmartTourContentListPage
-      },
-      {
-        path: "/smartTour/:id/beacons",
-        name: "SmartTourBeaconList",
-        props: true,
-        component: SmartTourBeaconListPage
-      },
-      {
-        path: "/smartTour/:id/Settings",
-        name: "SmartTourSettings",
-        props: true,
-        component: SmartTourSettingsPage
-      }
-    ]
+    component: STHomePage
+  },
+  {
+    path: "/smartTour/:id/presentation",
+    name: "SmartTourPresentation",
+    props: true,
+    component: STPresentationPage
+  },
+  {
+    path: "/smartTour/:id/map",
+    name: "SmartTourMap",
+    props: true,
+    component: STMapPage
+  },
+  {
+    path: "/smartTour/:id/tours",
+    name: "SmartTourListTour",
+    props: true,
+    component: STListTourPage
+  },
+  {
+    path: "/smartTour/:id/quiz",
+    name: "SmartTourQuiz",
+    props: true,
+    component: STQuizPage
+  },
+  {
+    path: "/smartTour/:id/ask",
+    name: "SmartTourAsk",
+    props: true,
+    component: STAskPage
+  },
+  {
+    path: "/smartTour/:id/Settings",
+    name: "SmartTourSettings",
+    props: true,
+    component: STSettingsPage
   }
 ];
 
