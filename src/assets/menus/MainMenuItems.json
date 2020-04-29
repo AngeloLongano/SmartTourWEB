@@ -5,19 +5,19 @@
     "icon": "home"
   },
   {
-    "label": "Smart Tours",
-    "namedRoute": "SmartTourList",
+    "label": "Tours",
+    "namedRoute": "SmartTourListTour",
     "icon": "explore"
-  },
-  {
-    "label": "Le mie mappe",
-    "namedRoute": "Maps",
-    "icon": "map"
   },
   {
     "label": "Contenuti smart",
     "namedRoute": "SmartThings",
     "icon": "dynamic_feed"
+  },
+  {
+    "label": "Le mie mappe",
+    "namedRoute": "Maps",
+    "icon": "map"
   },
   {
     "label": "I miei media",

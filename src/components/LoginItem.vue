@@ -6,7 +6,7 @@
 
     <q-card-section>
       <div class="q-pa-md" style="max-width: 400px">
-        <q-form @submit="onLogin" class="q-gutter-md">
+        <q-form @submit.prevent="login" class="q-gutter-md">
           <q-input
             color="teal"
             filled
@@ -44,10 +44,6 @@
           <div>
             <q-btn label="Login" type="submit" color="primary" />
           </div>
-          <!-- <q-card-actions align="around">
-          <q-btn :to="{ name: 'AboutUS' }" flat>scopri</q-btn>
-          <q-btn :to="{ name: 'SmartTourList' }" flat>login</q-btn>
-        </q-card-actions> -->
         </q-form>
       </div>
     </q-card-section>
@@ -55,6 +51,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -65,22 +62,30 @@ export default {
   },
 
   methods: {
-    onLogin() {
-      if (this.username != "a") {
-        this.$q.notify({
-          color: "red-5",
-          textColor: "white",
-          icon: "warning",
-          message: "Username e/o password non corretti"
+    login() {
+      this.$store
+        .dispatch("userState/login", {
+          username: this.username,
+          password: this.password
+        })
+        .then(() => {
+          this.$router.push({
+            name: "Agency"
+          });
+        })
+        .catch(err => {
+          let errorMessage = err.response
+            ? err.response.data.message
+            : "server al momento non disponibile";
+          this.$q.notify({
+            color: "red-5",
+            textColor: "white",
+            icon: "warning",
+            message: errorMessage
+          });
         });
-      } else {
-        this.$router.push({
-          name: "SmartTourList"
-        });
-      }
-      this.username = null;
-      this.password = null;
-    }
+    },
+    ...mapActions(["loadData"])
   }
 };
 </script>

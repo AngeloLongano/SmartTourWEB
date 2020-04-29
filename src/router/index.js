@@ -3,11 +3,11 @@ import VueRouter from "vue-router";
 
 import LoginPage from "../views/LoginPage.vue";
 import AboutUsPage from "../views/AboutUsPage.vue";
+import NotFoundPage from "../views/NotFoundPage.vue";
 
 // import DefaultLayout from "../layout/DefaultLayout.vue";
 // import SmartTourLayout from "../layout/SmartTourLayout.vue";
 
-import SmartTourListPage from "../views/mainViews/SmartTourListPage.vue";
 import AgencyPage from "../views/mainViews/AgencyPage.vue";
 import MapsPage from "../views/mainViews/MapsPage.vue";
 import MediaPage from "../views/mainViews/MediaPage.vue";
@@ -18,7 +18,6 @@ import MainSettingsPage from "../views/mainViews/MainSettingsPage.vue";
 import STHomePage from "../views/smartTourViews/STHomePage.vue";
 import STListTourPage from "../views/smartTourViews/STListTourPage.vue";
 import STQuizPage from "../views/smartTourViews/STQuizPage.vue";
-import STAskPage from "../views/smartTourViews/STAskPage.vue";
 import STMapPage from "../views/smartTourViews/STMapPage.vue";
 import STPresentationPage from "../views/smartTourViews/STPresentationPage.vue";
 import STSettingsPage from "../views/smartTourViews/STSettingsPage.vue";
@@ -27,9 +26,9 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/login",
+    path: "/",
     name: "Login",
-    alias: "/",
+    alias: "/login",
     component: LoginPage
   },
   {
@@ -39,14 +38,10 @@ const routes = [
   },
 
   {
-    path: "/smartTourList",
-    name: "SmartTourList",
-    component: SmartTourListPage
-  },
-  {
     path: "/agency",
     name: "Agency",
-    component: AgencyPage
+    component: AgencyPage,
+    meta: { requiresAuth: true }
   },
   {
     path: "/maps",
@@ -106,16 +101,19 @@ const routes = [
     component: STQuizPage
   },
   {
-    path: "/smartTour/:id/ask",
-    name: "SmartTourAsk",
-    props: true,
-    component: STAskPage
-  },
-  {
     path: "/smartTour/:id/Settings",
     name: "SmartTourSettings",
     props: true,
     component: STSettingsPage
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: NotFoundPage
+  },
+  {
+    path: "*",
+    redirect: { name: "404" }
   }
 ];
 
@@ -124,5 +122,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-
+router.beforeEach((to, from, next) => {
+  const loggedIn = localStorage.getItem("user");
+  if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
+    next("/");
+  }
+  next();
+});
 export default router;

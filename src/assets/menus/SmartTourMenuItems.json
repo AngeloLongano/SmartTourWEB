@@ -25,18 +25,13 @@
     "icon": "assignment"
   },
   {
-    "label": "Ask",
-    "namedRoute": "SmartTourAsk",
-    "icon": "forum"
-  },
-  {
     "label": "Settings",
     "namedRoute": "SmartTourSettings",
     "icon": "settings"
   },
   {
-    "label": "SmartTourList",
-    "namedRoute": "SmartTourList",
+    "label": "",
+    "namedRoute": "Agency",
     "icon": "keyboard_return"
   }
 ]

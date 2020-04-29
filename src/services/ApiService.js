@@ -1,16 +1,34 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: `http://192.168.1.226:54095/api`,
-  withCredentials: false, // This is the default
+  baseURL: `http://localhost:57929/api`,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json"
-  }
+  },
+  timeout: 5000
 });
 
 export default {
-  getUser(id) {
-    return apiClient.get("/consumers" + id);
+  setToken(token) {
+    let authorization = "Bearer " + token;
+
+    apiClient.defaults.headers.common["Authorization"] = authorization;
+    let api = apiClient;
+
+    console.log(api);
+  },
+  login(credentials) {
+    console.log(credentials);
+    return apiClient.post("/users/login", credentials);
+  },
+  getUsers() {
+    return apiClient.get("/users");
+  },
+  getAgencies() {
+    return apiClient.get("/agencies");
+  },
+  getAgenciesPublic() {
+    return apiClient.get("/agencies");
   }
 };

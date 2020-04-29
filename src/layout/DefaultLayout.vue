@@ -10,6 +10,7 @@
             </q-avatar>
             Smart tour
           </q-toolbar-title>
+          <q-btn flat @click="logout" round dense icon="lock" />
         </q-toolbar>
       </q-header>
 
@@ -62,6 +63,14 @@ export default {
       miniState: true,
       MainMenuItems: MainMenuItems
     };
+  },
+  methods: {
+    logout() {
+      this.$router.push({
+        name: "Login"
+      });
+      this.$store.dispatch("userState/logout");
+    }
   }
 };
 </script>
